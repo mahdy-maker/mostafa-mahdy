@@ -1,92 +1,23 @@
 <?php
 session_start();
-if (!empty($_POST['firstQ']) && !empty($_POST['secondQ']) && !empty($_POST['thirdQ']) && !empty($_POST['fourthQ']) && !empty($_POST['fifthQ'])) {
-
-    if ($_POST['firstQ'] == 'bad') {
-        $_SESSION['q1'] = 'bad';
+if (!empty($_POST['1Q']) && !empty($_POST['2Q']) && !empty($_POST['3Q']) && !empty($_POST['4Q']) && !empty($_POST['5Q'])) {
+for($i=1;$i<=5;$i++){
+    if ($_POST['<?=$i?>Q'] == 'bad') {
+        $_SESSION['q<?=$i?>'] = 'bad';
         $sum=0;
-    } else if ($_POST['firstQ'] == 'good') {
-        $_SESSION['q1'] = 'good';
+    } else if ($_POST['<?=$i?>Q'] == 'good') {
+        $_SESSION['q<?=$i?>'] = 'good';
         $sum=3;
-    } else if ($_POST['firstQ'] == 'very good') {
-        $_SESSION['q1'] = 'very good';
+    } else if ($_POST['<?=$i?>Q'] == 'very good') {
+        $_SESSION['q<?=$i?>'] = 'very good';
         $sum=5;
-    } else if ($_POST['firstQ'] == 'exellent') {
-        $_SESSION['q1'] = 'ecellent';
+    } else if ($_POST['<?=$i?>Q'] == 'exellent') {
+        $_SESSION['q<?=$i?>'] = 'excellent';
         $sum=10;
     }
+}
 
-
-    if ($_POST['secondQ'] == 'bad') {
-        $_SESSION['q2'] = 'bad';
-        $sum+=0;
-    } else if ($_POST['secondQ'] == 'good') {
-        $_SESSION['q2'] = 'good';
-        $sum+=3;
-    } else if ($_POST['secondQ'] == 'very good') {
-        $_SESSION['q2'] = 'very good';
-        $sum+=5;
-    } else if ($_POST['secondQ'] == 'exellent') {
-        $_SESSION['q2'] = 'exellent';
-        $sum+=10;
-
-    }
-
-
-    if ($_POST['thirdQ'] == 'bad') {
-        $_SESSION['q3'] = 'bad';
-        $sum+=0;
-
-    } else if ($_POST['thirdQ'] == 'good') {
-        $_SESSION['q3'] = 'good';
-        $sum+=3;
-
-    } else if ($_POST['thirdQ'] == 'very good') {
-        $_SESSION['q3'] = 'very good';
-        $sum+=5;
-
-    } else if ($_POST['thirdQ'] == 'exellent') {
-        $_SESSION['q3'] = 'exellent';
-        $sum+=10;
-
-    }
-
-
-    if ($_POST['fourthQ'] == 'bad') {
-        $_SESSION['q4'] = 'bad';
-        $sum+=0;
-
-    } else if ($_POST['fourthQ'] == 'good') {
-        $_SESSION['q4'] = 'good';
-        $sum+=3;
-
-    } else if ($_POST['fourthQ'] == 'very good') {
-        $_SESSION['q4'] = 'very good';
-        $sum+=5;
-
-    } else if ($_POST['fourthQ'] == 'exellent') {
-        $_SESSION['q4'] = 'exellent';
-        $sum+=10;
-
-    }
-
-    if ($_POST['fifthQ'] == 'bad') {
-        $_SESSION['q5'] = 'bad';
-        $sum+=0;
-
-    } else if ($_POST['fifthQ'] == 'good') {
-        $_SESSION['q5'] = 'good';
-        $sum+=3;
-
-    } else if ($_POST['fifthQ'] == 'very good') {
-        $_SESSION['q5'] = 'very good';
-        $sum+=5;
-
-    } else if ($_POST['fifthQ'] == 'exellent') {
-        $_SESSION['q5'] = 'exellent';
-        $sum+=10;
-
-    }
+    
     
     if($sum<25){
     $_SESSION['total-review']="We will call you later on this phone :".$_SESSION['number'];
@@ -152,39 +83,39 @@ if (!empty($_POST['firstQ']) && !empty($_POST['secondQ']) && !empty($_POST['thir
                 <tbody>
                     <tr>
                         <td>Are you satisfied with the level of cleanliness ?</td>
-                        <td><input name="firstQ" type="radio" value="bad"></td>
-                        <td><input name="firstQ" type="radio" value="good"></td>
-                        <td><input name="firstQ" type="radio" value="very good"></td>
-                        <td><input name="firstQ" type="radio" value="exellent"></td>
+                        <td><input name="1Q" type="radio" value="bad"></td>
+                        <td><input name="1Q" type="radio" value="good"></td>
+                        <td><input name="1Q" type="radio" value="very good"></td>
+                        <td><input name="1Q" type="radio" value="exellent"></td>
 
                     </tr>
                     <tr>
                         <td>Are you satisfied with the service prices ?</td>
-                        <td><input name="secondQ" type="radio" value="bad"></td>
-                        <td><input name="secondQ" type="radio" value="good"></td>
-                        <td><input name="secondQ" type="radio" value="very good"></td>
-                        <td><input name="secondQ" type="radio" value="exellent"></td>
+                        <td><input name="2Q" type="radio" value="bad"></td>
+                        <td><input name="2Q" type="radio" value="good"></td>
+                        <td><input name="2Q" type="radio" value="very good"></td>
+                        <td><input name="2Q" type="radio" value="exellent"></td>
                     </tr>
                     <tr>
                         <td>Are you satisfied with the nursing service ?</td>
-                        <td><input name="thirdQ" type="radio" value="bad"></td>
-                        <td><input name="thirdQ" type="radio" value="good"></td>
-                        <td><input name="thirdQ" type="radio" value="very good"></td>
-                        <td><input name="thirdQ" type="radio" value="exellent"></td>
+                        <td><input name="3Q" type="radio" value="bad"></td>
+                        <td><input name="3Q" type="radio" value="good"></td>
+                        <td><input name="3Q" type="radio" value="very good"></td>
+                        <td><input name="3Q" type="radio" value="exellent"></td>
                     </tr>
                     <tr>
                         <td>Are you satisfied with the level of the doctor ?</td>
-                        <td><input name="fourthQ" type="radio" value="bad"></td>
-                        <td><input name="fourthQ" type="radio" value="good"></td>
-                        <td><input name="fourthQ" type="radio" value="very good"></td>
-                        <td><input name="fourthQ" type="radio" value="exellent"></td>
+                        <td><input name="4Q" type="radio" value="bad"></td>
+                        <td><input name="4Q" type="radio" value="good"></td>
+                        <td><input name="4Q" type="radio" value="very good"></td>
+                        <td><input name="4Q" type="radio" value="exellent"></td>
                     </tr>
                     <tr>
                         <td>Are you satisfied with the calmness in the hospital ?</td>
-                        <td><input name="fifthQ" type="radio" value="bad"></td>
-                        <td><input name="fifthQ" type="radio" value="good"></td>
-                        <td><input name="fifthQ" type="radio" value="very good"></td>
-                        <td><input name="fifthQ" type="radio" value="exellent"></td>
+                        <td><input name="5Q" type="radio" value="bad"></td>
+                        <td><input name="5Q" type="radio" value="good"></td>
+                        <td><input name="5Q" type="radio" value="very good"></td>
+                        <td><input name="5Q" type="radio" value="exellent"></td>
                     </tr>
                 </tbody>
             </table>

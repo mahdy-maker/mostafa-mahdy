@@ -8,6 +8,7 @@ if (!empty($_POST['number'])) {
 ?>
 <!doctype html>
 <html lang="en">
+
 <head>
   <title>Number</title>
   <!-- Required meta tags -->
@@ -24,6 +25,7 @@ if (!empty($_POST['number'])) {
     }
   </style>
 </head>
+
 <body>
   <form action="" method="post" style="margin-top:400px ;">
     <div class="form-group">
